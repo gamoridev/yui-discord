@@ -13,10 +13,7 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
     }
 
     if (newState.channel && newState.channel.name === "Live") {
-      const havingAGoodTime = Math.random() <= 0.05;
-      const file = havingAGoodTime
-        ? "./sounds/connected-but-its-loud-af.mp3"
-        : "./sounds/connected.wav";
+      const file = "./sounds/connected.wav";
       play(newState.channel, file);
     }
   }
