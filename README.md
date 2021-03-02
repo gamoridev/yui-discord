@@ -1,6 +1,7 @@
 # Yui sounds
 
-This Discord bot will play Yui's sounds on connect and disconnect when a user enters or leaves a voice channel.
+This Discord bot will play Yuigahama's sounds on connect and disconnect when a user enters or leaves a voice channel.
+![Yui](./yui.png)
 
 ### Original project [https://alexvanderbist.com/2020/teamspeak-voice-notifications-for-discord/](https://alexvanderbist.com/2020/teamspeak-voice-notifications-for-discord/).
 
