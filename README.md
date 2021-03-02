@@ -19,5 +19,5 @@ Create a new bot on https://discordapp.com/developers/applications and change ge
 Rename the `.env.example` file to `.env` and edit its contents to include your Discord bot token. Finally execute the `index.js` file:
 
 ```bash
-	node index.js
+node index.js
 ```
