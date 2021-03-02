@@ -8,11 +8,14 @@ client.on("ready", () => {
 });
 
 client.on("voiceStateUpdate", async (oldState, newState) => {
+
   if (oldState.channel !== newState.channel) {
+    // User leaving channel
     if (oldState.channel && oldState.channel.name === CHANNEL_NAME) {
       play(oldState.channel, "./sounds/baka.mp3");
     }
 
+    // User entering channel
     if (newState.channel && newState.channel.name === CHANNEL_NAME) {
       const file = "./sounds/yahallo.mp3";
       setTimeout(() => {
@@ -20,10 +23,6 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
       }, 1000)
     }
   }
-
-  // if (oldState.selfDeaf && !newState.selfDeaf) {
-  //   play(oldState.channel, './sounds/talkpower_granted.wav');
-  // }
 });
 
 client.login(DISCORD_BOT_TOKEN);
