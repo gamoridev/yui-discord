@@ -1,6 +1,7 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const { DISCORD_BOT_TOKEN, CHANNEL_NAME } = process.env;
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -8,13 +9,15 @@ client.on("ready", () => {
 
 client.on("voiceStateUpdate", async (oldState, newState) => {
   if (oldState.channel !== newState.channel) {
-    if (oldState.channel && oldState.channel.name === "Live") {
-      play(oldState.channel, "./sounds/disconnected.wav");
+    if (oldState.channel && oldState.channel.name === CHANNEL_NAME) {
+      play(oldState.channel, "./sounds/baka.mp3");
     }
 
-    if (newState.channel && newState.channel.name === "Live") {
-      const file = "./sounds/connected.wav";
-      play(newState.channel, file);
+    if (newState.channel && newState.channel.name === CHANNEL_NAME) {
+      const file = "./sounds/yahallo.mp3";
+      setTimeout(() => {
+        play(newState.channel, file);
+      }, 1000)
     }
   }
 
@@ -23,10 +26,10 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   // }
 });
 
-client.login(process.env.DISCORD_BOT_TOKEN);
+client.login(DISCORD_BOT_TOKEN);
 
 async function play(channel, file) {
   const connection = await channel.join();
 
-  connection.play(file, { volume: 0.4 });
+  connection.play(file, { volume: 0.5 });
 }
