@@ -8,19 +8,19 @@ client.on("ready", () => {
 });
 
 client.on("voiceStateUpdate", async (oldState, newState) => {
-
   if (oldState.channel !== newState.channel) {
     // User leaving channel
     if (oldState.channel && oldState.channel.name === CHANNEL_NAME) {
-      play(oldState.channel, "./sounds/baka.mp3");
+      const file = "./sounds/disconected.mp3";
+      play(oldState.channel, file);
     }
 
     // User entering channel
     if (newState.channel && newState.channel.name === CHANNEL_NAME) {
-      const file = "./sounds/yahallo.mp3";
+      const file = "./sounds/connected.mp3";
       setTimeout(() => {
         play(newState.channel, file);
-      }, 1000)
+      }, 1000);
     }
   }
 });
