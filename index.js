@@ -11,13 +11,13 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   if (oldState.channel !== newState.channel) {
     // User leaving channel
     if (oldState.channel && oldState.channel.name === CHANNEL_NAME) {
-      const file = "./sounds/disconected.mp3";
+      const file = "./sounds/disconected.wav";
       play(oldState.channel, file);
     }
 
     // User entering channel
     if (newState.channel && newState.channel.name === CHANNEL_NAME) {
-      const file = "./sounds/connected.mp3";
+      const file = "./sounds/connected.wav";
       setTimeout(() => {
         play(newState.channel, file);
       }, 1000);
