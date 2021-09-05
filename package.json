@@ -7,6 +7,12 @@
     "ffmpeg-static": "^4.0.1",
     "utf-8-validate": "^5.0.2"
   },
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
   "name": "disteamcordspeak",
   "version": "1.0.0",
   "description": "TeamSpeak notifications for Discord",
