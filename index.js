@@ -1,6 +1,7 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const http = require("http");
 const { DISCORD_BOT_TOKEN, CHANNEL_NAME } = process.env;
 
 client.on("ready", () => {
@@ -32,3 +33,9 @@ async function play(channel, file) {
 
   connection.play(file, { volume: 0.5 });
 }
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end("ok");
+});
+server.listen(3000);
