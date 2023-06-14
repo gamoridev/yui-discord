@@ -2,7 +2,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.1.0",
     "bufferutil": "^4.0.1",
-    "discord.js": "^12.1.1",
+    "discord.js": "^14.11.0",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^5.1.0",
     "http-server": "^13.0.2",
