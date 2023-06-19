@@ -5,7 +5,7 @@
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^5.1.0",
-    "http-server": "^13.0.2",
+    "http-server": "^14.1.1",
     "utf-8-validate": "^6.0.3"
   },
   "engines": {
